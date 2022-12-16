@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+using namespace std;
+void solve()
+{
+    int n;
+    cin>>n;
+    int a[n][n],m,c=1,b=1;
+    if(n==2)
+        {cout<<-1<<"\n";
+        return;}
+    else
+        {
+            if((n*n)%2==0)
+               m=(n*n)/2;
+        else
+            m=((n*n)/2)+1;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(c<=m)
+                {a[i][j]=2*c-1;
+                c++;}
+                else
+                {a[i][j]=2*b;
+                    b++;}
+            }
+        }
+    }
+    for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                cout<<a[i][j]<<" ";
+            }
+            cout<<"\n";
+        }
+}
+int main()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+    int t=0;
+    cin>>t;
+    while(t--)
+    {
+        solve();
+    }
+}
